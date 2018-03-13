@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite" parallel="false">
+    <test name="Triangle">
+        <classes>
+            <class name="triangle.TriangleCheckTest"/>
+            <class name="triangle.TriangleDetectTest"/>
+            <class name="triangle.TriangleGetSquareTest"/>
+        </classes>
+    </test>
+    <test name="TriangleTwo">
+        <classes>
+            <class name="triangle.TriangleCheckTest">
+                <methods>
+                    <exclude name="testCheckTriangle" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="TriangleThree">
+        <groups>
+            <run>
+                <include name="exception"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="triangle.TriangleDetectTest"/>
+            <class name="triangle.TriangleGetSquareTest"/>
+        </classes>
+    </test>
+</suite>
